@@ -1,0 +1,109 @@
+@charset "UTF-8";
+html,body,h4{
+	margin: 0;
+	padding: 0;
+}
+.edit_containt{
+	width: 600px;
+	margin:0 auto;
+	padding: 30px;
+	background-color: #ddd;
+	font-size: 14px;
+	color: #444444;
+}
+.edit_containt span{
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+}
+#editPopBox h4{
+	line-height: 35px;
+	height: 35px;
+	background-color: #4b8df8;
+	color: #ffffff;
+	padding-left: 15px;
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+.edit_containt .statusValue{
+	display: inline-block;
+	width: 200px;
+	background-color: #ffffff;
+	text-align: center;
+}
+.img_URL{
+	position: relative;
+}
+#choseImg{
+	position: absolute;
+	left:307px;
+	filter:alpha(opacity:0);
+	opacity: 0;
+	width: 68px;
+}
+#preview{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #999;
+	margin-left: 124px;
+	background-color: #fff;
+	text-align: center;
+}
+#preview img{
+	width: 90px;
+	height: auto;
+	vertical-align: middle;
+	border: none;
+}
+#preview span{
+	height: 100%;
+	width: 0;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+#text_choice2{
+	position: relative;
+	display:none;
+}
+#text_choice2 span{
+	position: absolute;
+	top: 5px;
+}
+#text_choice2 textarea{
+	margin-left: 127px;
+}
+.m_versition input{
+	width: 150px;
+}
+.comment{
+	position: relative;
+}
+.comment span{
+	position:absolute;
+	top: 5px;
+}
+.comment textarea{
+	margin-left: 127px;
+}
+.mainBtn{
+	width: 100%;
+	text-align: center;
+}
+.mainBtn button{
+	margin-top: 20px;
+	width: 80px;
+	height: 30px;
+}
+.popupBox{
+	border: 1px solid #b2b2b2;
+	background-color: #f6f6f6;
+	padding-left: 70px;
+	display: none;
+}
+.addDivP1 input{
+	margin-left: 7px;
+}
+.addDivP2 label:nth-child(1){
+	padding-left: 28px;
+}

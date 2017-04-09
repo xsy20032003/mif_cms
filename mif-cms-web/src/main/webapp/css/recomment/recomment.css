@@ -1,0 +1,12 @@
+.popupBoxTable{
+	width:723px;
+}
+.popupBoxTable table,.popupBoxTable td,.popupBoxTable th{
+	border:1px solid  #999;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+.popup li{
+	margin-top:10px;
+}

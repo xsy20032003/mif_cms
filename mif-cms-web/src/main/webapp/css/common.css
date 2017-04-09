@@ -1,0 +1,246 @@
+#app{
+
+}
+.title{
+    background-color:rgba(75,141,248,1);
+    margin:0;
+    color: white;
+    padding-left：20px;
+}
+.NoticeContainer{
+    padding: 10px 20px;
+    margin:0;
+}
+#miantable tr th,#miantable tr td{
+    text-align:center;
+    border-right:1px solid #ddd;
+}
+#miantable tr td{
+    vertical-align:middle;
+}
+#miantable tr{
+    border-left:1px solid #ddd;
+}
+#miantable tr:last-child,#miantable tr:first-child{
+    border:1px solid #ddd;
+}
+.popup,.listpopup,.showDetailsPop{
+    background: white;
+    opacity: 0;
+    position: fixed;
+    width: 1000px;
+    height: 550px;
+    -webkit-transform: rotateY(-70deg);
+    transform: rotateY(-70deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border:1px solid black;
+    background: white;
+    top: 150px;
+    left: 50%;
+    margin-left: -500px;
+    transition: .5s ease-in-out;
+    visibility: hidden;
+}
+.listpopup{
+    box-sizing: border-box;
+}
+.popup.active{
+    visibility:visible;
+    z-index:4;
+    opacity: 1;
+    -webkit-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+    overflow:scroll;
+}
+.popList ul{
+	padding:20px;
+}
+.listpopup.active{
+    visibility:visible;
+    z-index:5;
+    opacity: 1;
+    -webkit-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+}
+
+.showDetailsPop.active{
+	visibility:visible;
+    z-index:6;
+    opacity: 1;
+    -webkit-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+    overflow:scroll;
+}
+#PrdPop{
+	z-index:5;
+	padding:20px;
+}
+#createPrdPop{
+	z-index:6;
+	padding:20px;
+}
+#choosePrdPop{
+	z-index:7;
+	padding:20px;
+}
+.popup li{
+    list-style: none;
+    overflow: hidden;
+}
+.popup li label{
+    width:100px;
+    padding-right:20px;
+    text-align: right;
+    float:left;
+}
+.ml20{
+    margin-left:20px;
+}
+.mt20 span{
+	width:100px;
+	display:inline-block;
+	text-align:right;
+}
+#startTime,#endTime{
+    float: left;
+    width:200px;
+}
+.editorTitle{
+    background-color: rgba(75,141,248,1);
+    font-size:18px;
+    color:white;
+    height:24px;
+    line-height: 24px;
+}
+.description{
+    height:50px;
+    line-height: 20px;
+    font-size:15px;
+    width:200px;
+}
+.makeSurepop{
+    position: fixed;
+    height: 100px;
+    width: 400px;
+    top: 150px;
+    left: 50%;
+    margin-left: -200px;
+    text-align: center;
+    background: black;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-radius: 4px;
+    z-index:4;
+}
+.surePop{
+	height:130px;
+}
+.makeSurepop p{
+    margin-top:15px;
+}
+.footer{
+    text-align:center;
+}
+#cover,#Secondcover{
+	background:black;
+	opacity:0.5;
+	position:fixed;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	z-index:3;
+}
+.backBody{
+	width:100%;
+	height:1500px;
+	background-color:rgba(0,0,0,0.5);
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:100;
+	display:none;
+}
+.bigImg{
+    position: absolute;
+    width: 800px;
+    height: auto;
+    top: 150px;
+    left: 50%;
+    margin-left: -400px;
+    transition: .5s ease-in-out;
+    /*visibility: hidden;*/
+    z-index:101;
+}
+.closeImg{
+	width:35px;
+	height:35px;
+	border:1px solid #fff;
+	color:#fff;
+	border-radius:4px;
+	position:absolute;
+	top:105px;
+	left:940px;
+}
+.realNoticesArrayTable{
+	height: 270px;
+    overflow-y: scroll;
+}
+.mt20{
+	margin-top:20px;
+}
+#listpop{
+	padding:0 20px;
+	max-height:300px;
+	overflow:scroll;
+}
+.mt8{
+	margin-top:8px;
+}
+.mt3{
+	margin-top:3px;
+}
+#startTime,#endTime{
+	margin-bottom:0px!important;
+}
+[v-cloak]{
+    display: none;
+}
+.bar {
+    height: 18px;
+    background: green;
+}
+.mt3.hidden{
+	display:none;
+}
+.allTables td{
+    background:#d9534f!important;
+}
+.allTables.active td{
+    background:greenyellow!important;
+}
+.detailsTr td{
+    background:#d9534f!important;
+}
+.detailsTr.active td{
+    background:greenyellow!important;
+}
+.fintechRed td{
+	background:#d9534f!important;
+}
+#sureecover{
+	background: black;
+    opacity: 0.5;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index:3;
+}

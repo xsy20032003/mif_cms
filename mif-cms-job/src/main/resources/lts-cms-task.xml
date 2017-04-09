@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	            http://www.springframework.org/schema/context
+         				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         				http://www.springframework.org/schema/util
+         				http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+	
+	<bean id="dataScan" class="com.mif.cms.job.engine.DataScan" >
+		<property name="jdbcUrl" value="${mysql.url}"/>
+		<property name="userName" value="${mysql.username}"/>
+		<property name="userPassword" value="${mysql.password}"/>
+	</bean>
+	
+	<bean id="contentProcessor" class="com.mif.cms.job.engine.ContentProcessor" >
+		<property name="httpHosts" value="${ftp.host}"/>
+		<property name="httpPort" value="${ftp.port}"/>
+		<property name="httpUser" value="${ftp.user}"/>
+		<property name="httpPassword" value="${ftp.password}"/>
+		<property name="httpRootPath" value="${ftp.root_path}"/>
+		<property name="baseUrl" value="${ftp.base_url}" />
+		<property name="cdnUrl" value="${ftp.cdn_url}" />
+	</bean>
+
+ 	<context:component-scan base-package="com.mif.cms.job">
+	</context:component-scan>
+	
+	<bean id="taskTracker" class="com.lts.spring.TaskTrackerAnnotationFactoryBean" init-method="start">
+        <property name="jobRunnerClass" value="com.mif.cms.job.CMSJobRunner"/>
+        <property name="clusterName" value="${task.clusterName}"/>
+         <property name="bizLoggerLevel" value="INFO"/>
+        <property name="registryAddress" value="${task.registryAddress}"/>
+        <property name="nodeGroup" value="cms_task_tracker"/>
+        <property name="workThreads" value="${task.workThreads}"/>
+         <property name="masterChangeListeners">
+            <list>
+                <bean class="com.mif.cms.job.MasterChangeListenerImpl"/>
+            </list>
+        </property>
+        <property name="configs">
+            <props>
+                <prop key="job.fail.store">leveldb</prop>
+            </props>
+        </property>
+    </bean>  
+    
+	 <!--  <bean id="taskTracker" class="com.lts.spring.TaskTrackerAnnotationFactoryBean" init-method="start">
+        <property name="jobRunnerClass" value="com.mif.cms.job.CMSJobRunner"/>
+        <property name="clusterName" value="test_cluster"/>
+         <property name="bizLoggerLevel" value="INFO"/>
+        <property name="registryAddress" value="zookeeper://172.16.57.14:42181,172.16.57.15:42181,172.16.57.16:42181"/>
+        <property name="nodeGroup" value="cms_task_tracker"/>
+        <property name="workThreads" value="10"/>
+         <property name="masterChangeListeners">
+            <list>
+                <bean class="com.mif.cms.job.MasterChangeListenerImpl"/>
+            </list>
+        </property>
+        <property name="configs">
+            <props>
+                <prop key="job.fail.store">leveldb</prop>
+            </props>
+        </property>
+    </bean>  -->
+
+</beans>

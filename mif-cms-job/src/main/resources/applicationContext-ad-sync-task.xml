@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	            http://www.springframework.org/schema/context
+         				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         				http://www.springframework.org/schema/util
+         				http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- <import resource="classpath:spring/applicationContext-util.xml" /> -->
+	
+	<bean id="dataScan" class="com.mif.cms.job.engine.DataScan" >
+		<property name="jdbcUrl" value="jdbc:mysql://172.16.52.186:43306/eif_cms"/>
+		<property name="userName" value="root"/>
+		<property name="userPassword" value="123456"/>
+	</bean>
+	
+	<bean id="adDataScan" class="com.mif.cms.job.engine.ad.util.AdDataScan" >
+		<property name="dataScan" ref="dataScan" />
+	</bean>
+	
+	<!-- <bean id="contentProcessor" class="com.mif.cms.ad.task.util.ContentProcessor" >
+		<property name="httpHosts" value="${ftp.host}"/>
+		<property name="httpPort" value="${ftp.port}"/>
+		<property name="httpUser" value="${ftp.user}"/>
+		<property name="httpPassword" value="${ftp.password}"/>
+		<property name="httpRootPath" value="${ftp.root_path}"/>
+		<property name="baseUrl" value="${ftp.base_url}" />
+		<property name="cdnUrl" value="${ftp.cdn_url}" />
+	</bean> -->
+	
+	
+
+</beans>
